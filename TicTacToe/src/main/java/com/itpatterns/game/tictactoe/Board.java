@@ -130,11 +130,9 @@ public class Board {
 		for (int i = 0; i < lenght; i++ ){
 			for (int j=0; j < lenght; j++){
 				if (j==0)
-					strBuf.append("|"+grid[i][j]);
-				else if (j==lenght-1)
-					strBuf.append(grid[i][j] + "|" );
+					strBuf.append("|"+grid[i][j]  + "|");
 				else
-					strBuf.append("|" + grid[i][j] + "|");
+					strBuf.append(grid[i][j] + "|");
 			}			
 			strBuf.append("\n-------\n");			
 		}
