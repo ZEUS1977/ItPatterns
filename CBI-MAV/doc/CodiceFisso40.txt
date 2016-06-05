@@ -1,0 +1,14 @@
+1		1- - - filler N blank
+2		2 -3 o an tipo record V codice fisso "40"
+7		4-10 o n numero progressivo V stesso numero del record 14 della
+		disposizione
+		Indirizzo del debitore
+30		11-40 o an indirizzo F via, numero civico e/o nome della frazione
+5		41-45 o n CAP F codice di avviamento postale
+25		46-70 o an comune e sigla provincia F comune e sigla della provincia
+28		71-98 f an completamento indirizzo F campo utilizzabile per completare i dati
+		dell’indirizzo del debitore qualora il campo
+		“indirizzo” (pos. 11-40) non fosse
+		sufficiente
+2		99-100 f an Codice Paese F codice paese secondo codifica ISO 3166
+20		101-120 - - filler N blank

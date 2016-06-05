@@ -1,0 +1,9 @@
+1	1- - - filler N blank
+2	2 -3 o an tipo record V codice fisso "20"
+7	4-10 o n numero progressivo V stesso numero del record 14 della
+	disposizione.
+24	11-34 o an 1° segmento F
+24	35-58 f an 2° segmento F
+24	59-82 f an 3° segmento F
+24	83-106 f an 4° segmento F
+14	107-120 - - filler N blank

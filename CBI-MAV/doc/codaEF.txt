@@ -1,0 +1,20 @@
+1	1- - - filler N blank
+2	2 –3 o an tipo record V "EF"
+5	4-8 o an mittente V V stessi dati presenti sul record di testa
+5	9-13 o n ricevente " "
+6	14-19 o n data creazione V " "
+20	20-39 o an Nome supporto V " "
+6	40-45 f an Campo a disposizione N campo a disposizione dell'Azienda mittente
+7	46-52 o n numero disposizioni V numero delle disposizioni (richieste di
+	incasso M.AV. contenute nel flusso)
+15	53- 67 o n tot. importi negativi V Importo totale - in centesimi di Euro - delle
+	disposizioni contenute nel flusso
+15	68-82 o n tot. importi positivi V valorizzato con "zeri"
+7	83-89 o n numero record V numero dei record che compongono il flusso
+	(comprensivo anche dei record di testa e di
+	coda)
+24	90-113 - - filler N blank
+1	114 - o an codice divisa V deve assumere lo stesso valore del campo
+	omonimo presente sul record di testa
+6	115-120 Campo non disponibile N Campo non utilizzabile per l’inserimento di
+	informazioni

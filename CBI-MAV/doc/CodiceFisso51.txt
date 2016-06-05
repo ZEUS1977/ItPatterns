@@ -1,0 +1,15 @@
+1		1- - - filler N blank
+2		2 -3 o an tipo record V codice fisso "51"
+3		4-10 o n numero progressivo V stesso numero del record 14 della
+		disposizione
+10		11-20 o n numero disposizione F numero della disposizione assegnato dal
+		creditore
+54		21-74 - - filler N blank
+12		75-86 f n codice identificativo
+		univoco
+		F codice di identificazione univoco apposto dal
+		cliente creditore, qualora egli stesso effettui la
+		stampa del bollettino di versamento; questo
+		campo è obbligatorio nel caso sia il cliente a
+		inviare il bollettino al cliente debitore
+34		87-120 - - filler N blank

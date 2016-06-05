@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--<!DOCTYPE file-format SYSTEM "http://www.blackbear.com/dtds/flatworm-data-description_1_0.dtd">-->
+
+<file-format>    
+	<converter name="char" class="com.blackbear.flatworm.converters.CoreConverters" method="convertChar" return-type="java.lang.String"/>    
+
+	<record name="testata">        	
+		<record-definition>            
+		<bean name="testaIM" class="it.zeussoft.cbiflat.mav.beans.TestaIM"/>            
+			<line>                
+				<record-element length="1"  type="char" >  
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/> 
+			    </record-element>    
+				<record-element length="2" beanref="testaIM.tipoRecord" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                                   
+				<record-element length="5" beanref="testaIM.mittenteSia" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                              
+				<record-element length="5" beanref="testaIM.riceventeABI" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="6" beanref="testaIM.dataCreazione" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="20" beanref="testaIM.nomeSupporto" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="6" beanref="testaIM.campoADisposizione" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="59" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="7" type="char" >  
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/> 
+			    </record-element>    
+				<record-element length="2" type="char" >  
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/> 
+			    </record-element>    
+				<record-element length="1" beanref="testaIM.codiceDivisa" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="E"/>
+			    </record-element>
+				<record-element length="1" type="char" >  
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/> 
+			    </record-element>    
+				<record-element length="5" beanref="testaIM.campoNonDisponibile"  type="char"> 
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>          
+			</line>        
+		</record-definition>
+	</record>
+	
+	<record name="coda">        	
+		<record-definition> 
+		<bean name="codaEF" class="it.zeussoft.cbiflat.mav.beans.CodaEF"/>            
+			<line>                
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element> 				                
+				<record-element length="2" beanref="codaEF.tipoRecord" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                                  
+				<record-element length="5" beanref="codaEF.mittenteSia" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                              
+				<record-element length="5" beanref="codaEF.riceventeABI" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="6" beanref="codaEF.dataCreazione" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="20" beanref="codaEF.nomeSupporto" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="6" beanref="codaEF.campoADisposizione" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="7" beanref="codaEF.numeroDisposizioni" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+				<record-element length="15" beanref="codaEF.totImportiNegativi" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+				<record-element length="15" beanref="codaEF.totImportiPositiviZeri" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+				<record-element length="7" beanref="codaEF.totRecord" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+				<record-element length="24" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="1" beanref="codaEF.codiceDivisa"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="E"/>
+			    </record-element>           
+				<record-element length="6" beanref="codaEF.campoNonDisponibile"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	
+	<record name="codiceFisso14">        	
+		<record-definition> 
+		<bean name="codiceFisso14Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso14"/>            
+			<line>                
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element> 				                
+				<record-element length="2" beanref="codiceFisso14Bean.tipoRecord" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                                  
+				<record-element length="7" beanref="codiceFisso14Bean.progressivo" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>                              
+				<record-element length="12" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="6" beanref="codiceFisso14Bean.dataScadenza" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="5" beanref="codiceFisso14Bean.causale" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="13" beanref="codiceFisso14Bean.importo" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+				<record-element length="1" beanref="codiceFisso14Bean.segno" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="5" beanref="codiceFisso14Bean.abiCreditore" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="5" beanref="codiceFisso14Bean.cabAssuntrice" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="12"  beanref="codiceFisso14Bean.contoAccredito" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="22" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>           
+				<record-element length="5" beanref="codiceFisso14Bean.codiceSia"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="1" beanref="codiceFisso14Bean.tipo"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="16" beanref="codiceFisso14Bean.codiceDebitore"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="6" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="1" beanref="codiceFisso14Bean.codiceDvisa"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="E"/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	<record name="codiceFisso20">        	
+		<record-definition> 
+		<bean name="codiceFisso20Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso20"/>            
+			<line>    
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="2" beanref="codiceFisso20Bean.tipoRecord"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="7" beanref="codiceFisso20Bean.progressivo"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="24" beanref="codiceFisso20Bean.primoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="24" beanref="codiceFisso20Bean.secondoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="24" beanref="codiceFisso20Bean.terzoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="24" beanref="codiceFisso20Bean.quartoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="14" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	<record name="codiceFisso30">        	
+		<record-definition> 
+		<bean name="codiceFisso30Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso30"/>            
+			<line>    
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="2" beanref="codiceFisso30Bean.tipoRecord"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="7" beanref="codiceFisso30Bean.progressivo"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="30" beanref="codiceFisso30Bean.primoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="30" beanref="codiceFisso30Bean.secondoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="16" beanref="codiceFisso30Bean.codiceFiscaleDebitore"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="34" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	
+		<record name="codiceFisso40">        	
+		<record-definition> 
+		<bean name="codiceFisso40Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso40"/>            
+			<line>                
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element> 				                
+				<record-element length="2" beanref="codiceFisso40Bean.tipoRecord" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>                                  
+				<record-element length="7" beanref="codiceFisso40Bean.progressivo" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>                              
+				<record-element length="30" beanref="codiceFisso40Bean.viaCivicoFrazione" type="char" >
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="5" beanref="codiceFisso40Bean.cap" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="25" beanref="codiceFisso40Bean.comuneProvincia" type="char" >
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="28" beanref="codiceFisso40Bean.completamentoIndirizzo" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="2" beanref="codiceFisso40Bean.codicePaese" type="char" >
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+				<record-element length="20" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	
+	<record name="codiceFisso50">        	
+		<record-definition> 
+		<bean name="codiceFisso50Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso50"/>            
+			<line>    
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="2" beanref="codiceFisso50Bean.tipoRecord"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="7" beanref="codiceFisso50Bean.progressivo"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="40" beanref="codiceFisso50Bean.primoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="40" beanref="codiceFisso50Bean.secondoSegmentoF"  type="char">
+					<conversion-option name="justify" value="left"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="30" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	
+	<record name="codiceFisso51">        	
+		<record-definition> 
+		<bean name="codiceFisso51Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso51"/>            
+			<line>    
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="2" beanref="codiceFisso51Bean.tipoRecord"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="7" beanref="codiceFisso51Bean.progressivo"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="10" beanref="codiceFisso51Bean.numeroDisposizione"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="54" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="12" beanref="codiceFisso51Bean.codiceIdentificativoUnivoco" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="34" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>
+	
+		<record name="codiceFisso70">        	
+		<record-definition> 
+		<bean name="codiceFisso70Bean" class="it.zeussoft.cbiflat.mav.beans.CodiceFisso70"/>            
+			<line>    
+				<record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="2" beanref="codiceFisso70Bean.tipoRecord"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="7" beanref="codiceFisso70Bean.progressivo"  type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value="0"/>
+			    </record-element>
+			    <record-element length="83" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="1" beanref="codiceFisso70Bean.tipoBollettino" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="1" type="char">
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="5" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			    <record-element length="20" beanref="codiceFisso70Bean.chiaviDiControllo" type="char" >
+					<conversion-option name="justify" value="right"/>  
+                    <conversion-option name="pad-character" value=" "/>
+			    </record-element>
+			</line>        
+		</record-definition>    
+	</record>		
+</file-format>

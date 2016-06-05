@@ -1,0 +1,9 @@
+1		1- - - filler N blank
+2		2-3 o an tipo record V codice fisso "30"
+7		4-10 o n numero progressivo V stesso numero del record 14 della
+		disposizione
+		Descrizione del debitore (è suddivisa in 2 segmenti alfanumerici di 30 caratteri ciascuno)
+30		11-40 o an 1° segmento F
+30		41-70 f an 2° segmento F
+16		71-86 f an codice fiscale cliente F codice fiscale del cliente debitore
+34		87-120 - - filler N blank

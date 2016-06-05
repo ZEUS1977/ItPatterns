@@ -1,0 +1,34 @@
+1		1- - - filler N blank
+2		2-3 o an tipo record V "IM"
+5		4-8 o an Mittente V codice assegnato dalla Sia all'Azienda
+		Mittente; è censita sul Directory;
+5		9-13 o n Ricevente V codice ABI della banca assuntrice cui devono
+		essere inviate le disposizioni; è censita sul
+		Directory;
+6		14-19 o n data creazione F data di creazione del 'flusso' da parte
+		dell'Azienda mittente nel formato GGMMAA
+20		20-39 o an Nome supporto V campo di libera composizione da parte
+		dell'Azienda Mittente; dev'essere univoco
+		nell'ambito della data di creazione e a parità
+		di mittente e ricevente.
+6		40-45 f an campo a disposizione N campo a disposizione dell'Azienda mittente
+59		46-104 - - filler N blank
+7		105-111 f Qualificatore flusso Questo campo è facoltativo. Diventa
+		obbligatorio esclusivamente per operazioni
+		che comportano regole d’indirizzamento
+		differenti da quelle ordinarie.
+		Il campo è composto dai tre sottocampi: di
+		seguito riportati
+			105 f an Tipo flusso V Assume il valore:
+			“1” = operazioni generate nell’ambito di
+			attività Market Place
+			106 f an Qualificatore flusso V Assume il valore fisso “$”
+			107-111 n Soggetto Veicolatore V Se i due precedenti sottocampi sono
+			valorizzati con i valori previsti, deve essere
+			indicato il codice ABI della Banca Gateway
+			MP.
+2		112-113 - - filler N blank
+1		114 - o an codice divisa V Assume il valore fisso “E” (Euro)
+1		115- - - filler N blank
+5		116-120 Campo non disponibile N Campo non utilizzabile per l’inserimento di
+		informazioni

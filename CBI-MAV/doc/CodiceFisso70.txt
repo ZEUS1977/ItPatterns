@@ -1,0 +1,19 @@
+1		1- - - filler N blank
+2		2 -3 o an tipo record V codice fisso "70"
+7		4-10 o n numero progressivo V stesso numero del record 14 della
+		disposizione.
+83		11-93 - - filler N blank
+1		94- f an tipo bollettino V può assumere i seguenti valori :
+		blank : il cliente chiede alla banca di
+		comportarsi secondo accordi bilaterali
+		predefiniti
+		“P”: il cliente chiede alla banca di emettere
+		un bollettino MAV standard postale
+		“B”: il cliente chiede alla banca di emettere
+		un bollettino MAV valido solo per il
+		circuito bancario
+1		95 - - - filler N blank
+5		96 -100 f an campo a disposizione N campo a disposizione del mittente
+20		101-120 f an chiavi di controllo N campo a disposizione, valorizzabile
+		dall'Azienda previ accordi diretti con la
+		Banca Destinataria

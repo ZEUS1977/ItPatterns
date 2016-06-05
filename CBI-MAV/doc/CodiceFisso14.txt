@@ -1,0 +1,44 @@
+1	1- - - filler N blank
+2	2 -3 o an tipo record V codice fisso "14"
+7	4-10 o n numero progressivo V numero della disposizione all'interno del
+	flusso. Inizia con 1 ed è progressivo di 1. Il
+	numero deve essere uguale per tutti i record
+	della stessa disposizione
+12	11-22 - - filler N blank
+6	23-28 o n data pagamento F data di scadenza, nel formato GGMMAA
+	della disposizione
+5	29-33 o n causale V assume valore fisso "07000"
+13	34-46 o n importo F importo della disposizione in centesimi di
+	Euro
+1	47- o an Segno V assume valore fisso " - "
+	coordinate della Banca Assuntrice
+5	48 -52 o n codice ABI banca V codice ABI della banca del cliente creditore,
+	destinataria delle richieste di incasso; deve
+	corrispondere con quello presente nel record
+	di testa
+5	53-57 f n CAB banca F codice CAB della banca assuntrice.
+12	58-69 f an Conto F eventuale conto che il cliente chiede di
+	accreditare
+22	70-91 - - filler N -
+	coordinate Azienda Creditrice
+5	92-96 f an codice Azienda V codice SIA del cliente ordinante; tale codice,
+	se presente, deve essere valorizzato su tutte le
+	singole disposizioni contenute nel medesimo
+	supporto logico, e deve contenere sempre il
+	medesimo valore. Questo può essere diverso
+	dal codice SIA della azienda mittente indicato
+	sul record di testa, e non necessariamente è
+	censito tra i codici SIA riportati nelle tabelle
+	di routing dei Centri Applicativi.
+1	97- f n tipo codice V uno dei seguenti valori :
+	1 - utenza
+	2 - matricola
+	3 - codice fiscale
+	4 - codice cliente
+	5 - codice fornitore
+	6 - portafoglio commerciale
+	9 - altri
+16	98-113 f an codice cliente debitore F codice con il quale il debitore è conosciuto
+	dal creditore
+6	114-119 - - filler N blank
+1	120- o an codice divisa V Assume il valore fisso “E” (Euro)

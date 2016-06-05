@@ -1,0 +1,8 @@
+1		1- - - filler N blank
+2		2 -3 o an tipo record V codice fisso "50"
+7		4-10 o n numero progressivo V stesso numero del record 14 della
+		disposizione
+		riferimenti al debito (è suddiviso in due segmenti di 40 caratteri ciascuno)
+40		11-50 o an 1° segmento F
+40		51-90 f an 2° segmento F
+30		91-120 - - filler N blank
