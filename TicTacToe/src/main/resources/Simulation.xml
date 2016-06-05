@@ -3,23 +3,26 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <bean id="board" class="com.itpatterns.game.tictactoe.Board">
+   <bean id="board" class="com.itpatterns.game.tictactoe.Board" init-method="init">
+   		<property name="lenght" value="4" />
    </bean>
    
-   <bean id="cpO" class="com.itpatterns.game.tictactoe.ComputerPlayer">
+   <bean id="computerPlayer" class="com.itpatterns.game.tictactoe.ComputerPlayer" abstract="true" lazy-init="true">
+       <property name="board" ref="board" />
+   </bean>
+   
+   <bean id="cpO" parent="computerPlayer">
        <property name="type" value="com.itpatterns.game.tictactoe.PlayerType.O" />
-       <property name="board" ref="board" />
    </bean>
    
-   <bean id="cpX" class="com.itpatterns.game.tictactoe.ComputerPlayer">
+   <bean id="cpX" parent="computerPlayer">
        <property name="type" value="com.itpatterns.game.tictactoe.PlayerType.X" />
-       <property name="board" ref="board" />
    </bean>
    
-   <bean id="sim" class="com.itpatterns.game.tictactoe.Simulation">
+   <bean id="sim" class="com.itpatterns.game.tictactoe.Simulation" init-method="init" destroy-method="destroy" autowire="byType">
        <property name="playerO" ref="cpO" />
        <property name="playerX" ref="cpX" />
-       <property name="board" ref="board" />
+       <!-- you can eliminate thanks to autowire  <property name="board" ref="board" /> -->
    </bean>
 	
 </beans>

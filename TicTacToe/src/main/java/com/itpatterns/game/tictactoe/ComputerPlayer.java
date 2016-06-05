@@ -12,8 +12,8 @@ public class ComputerPlayer extends Player {
 		
 	}
 
-	public int randomPosition(){
-		return (0 + (int)(Math.random()*100)%3);
+	public int randomPosition(int max){
+		return (0 + (int)(Math.random()*100)%max);
 	}
 
 	boolean checkBusy(Simulation simulation, int x, int y) {
