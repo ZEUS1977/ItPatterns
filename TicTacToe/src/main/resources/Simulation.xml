@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="board" class="com.itpatterns.game.tictactoe.Board">
+   </bean>
+   
+   <bean id="cpO" class="com.itpatterns.game.tictactoe.ComputerPlayer">
+       <property name="type" value="com.itpatterns.game.tictactoe.PlayerType.O" />
+       <property name="board" ref="board" />
+   </bean>
+   
+   <bean id="cpX" class="com.itpatterns.game.tictactoe.ComputerPlayer">
+       <property name="type" value="com.itpatterns.game.tictactoe.PlayerType.X" />
+       <property name="board" ref="board" />
+   </bean>
+   
+   <bean id="sim" class="com.itpatterns.game.tictactoe.Simulation">
+       <property name="playerO" ref="cpO" />
+       <property name="playerX" ref="cpX" />
+       <property name="board" ref="board" />
+   </bean>
+	
+</beans>
