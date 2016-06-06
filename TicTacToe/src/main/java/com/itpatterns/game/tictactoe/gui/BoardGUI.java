@@ -1,11 +1,21 @@
 package com.itpatterns.game.tictactoe.gui;
 
 
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 import com.itpatterns.game.tictactoe.Simulation;
 
@@ -78,7 +88,6 @@ public class BoardGUI extends JPanel
         if (e.getSource() == playButton) {
         	Simulation sim = new Simulation();
         	sim.randomPlay();
-        	log.append(sim.logs);
     		log.append("Win X: "+sim.board.xWinner + "\n");
     		log.append("Win O: "+sim.board.oWinner + "\n");
     		log.append("Stalemate: "+sim.board.stalemate + "\n");

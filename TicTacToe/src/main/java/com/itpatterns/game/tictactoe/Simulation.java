@@ -2,15 +2,18 @@ package com.itpatterns.game.tictactoe;
 
 import java.util.Date;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Simulation {
 	
+	private static final Logger logger = LogManager.getLogger();
+	
 	public Board board;
 	public ComputerPlayer playerX;
 	public ComputerPlayer playerO;
-	public String logs = "";
 
 	public Date start;
 	public Date end;
@@ -55,14 +58,6 @@ public class Simulation {
 		this.playerO = pO;
 	}
 
-	public String getLogs() {
-		return logs;
-	}
-
-	public void setLogs(String logs) {
-		this.logs = logs;
-	}
-
 	public Simulation(){
 		
 	}
@@ -73,7 +68,7 @@ public class Simulation {
 	
 	public void destroy(){
 		this.end = new Date();
-		System.out.println("Delay :" + (end.getTime() - start.getTime())+ " ms");
+		logger.info("Delay :" + (end.getTime() - start.getTime())+ " ms");
 	}
 	
 	public Simulation(Board board, ComputerPlayer playerX, ComputerPlayer playerO){
@@ -96,10 +91,10 @@ public class Simulation {
 				positionBusy = playerO.checkBusy(this, x,y);
 				
 			}
-			logs+=playerO.move(x, y);
+			playerO.move(x, y);
+			logger.info("Moves O: "+x+","+y);
 			board.checkGameOver();
-			logs += board.print();
-			System.out.println(board.print());//TODO: sistemare con lo5j anche per GUI
+			logger.info(board.print());
 			if (board.gameOver)
 				break;
 			positionBusy=true;
@@ -108,10 +103,9 @@ public class Simulation {
 				y=playerX.randomPosition(board.lenght);
 				positionBusy = playerX.checkBusy(this, x,y);
 			}
-			logs+=playerX.move(x, y);
+			logger.info("Moves O: "+x+","+y);
 			board.checkGameOver();
-			logs += board.print();
-			System.out.println(board.print());//TODO: sistemare con lo5j anche per GUI
+			logger.info(board.print());
 			if (board.gameOver)
 				break;
 		}
@@ -124,11 +118,10 @@ public class Simulation {
 
 		Simulation sim = (Simulation)context.getBean("sim");
 		sim.randomPlay();
-		System.out.println(sim.logs);
-		System.out.println("Won X: "+sim.board.xWinner);
-		System.out.println("Won O: "+sim.board.oWinner);
-		System.out.println("Stalemate: "+sim.board.stalemate);
-		System.out.println("Moves: "+sim.board.moves);
+		logger.info("Won X: "+sim.board.xWinner);
+		logger.info("Won O: "+sim.board.oWinner);
+		logger.info("Stalemate: "+sim.board.stalemate);
+		logger.info("Moves: "+sim.board.moves);
 		context.registerShutdownHook();
 	}
 	

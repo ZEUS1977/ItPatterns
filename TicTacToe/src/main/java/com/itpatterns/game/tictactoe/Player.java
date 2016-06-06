@@ -30,17 +30,12 @@ public Player (Enum<PlayerType> type, Board board){
 	// TODO Auto-generated constructor stub
 }
 
-public String move(int x, int y) {
-	  String ret = "Move on :" + x  + "," + y;
+public void move(int x, int y) {
 	  if(type.equals(PlayerType.O)){
-		  this.board.grid[x][y] = "O";
-		  ret+=" O\n";
+		  this.board.grid[x][y] = PlayerType.O.toString();
 	  }else if (type.equals(PlayerType.X)){
-		  this.board.grid[x][y] = "X";
-		  ret+=" X\n";
+		  this.board.grid[x][y] = PlayerType.X.toString();
 	  }
-	 
 	  board.moves++;
-	  return ret;
   } 
 }

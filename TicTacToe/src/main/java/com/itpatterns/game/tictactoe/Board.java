@@ -3,7 +3,13 @@ package com.itpatterns.game.tictactoe;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Board {
+	
+	private static final Logger logger = LogManager.getLogger();
+	
 	public int lenght;
 	public String[][] grid; 
 	public boolean xWinner = false;
@@ -18,7 +24,7 @@ public class Board {
 	}
 	
 	public void init(){
-		System.out.println("INIT Lenght: "+lenght);
+		logger.info("INIT Lenght: "+lenght);
 		this.grid = new String[this.lenght][this.lenght];
 		for (int i = 0; i < this.lenght; i++){
 			for (int j = 0; j < this.lenght; j++)
@@ -55,9 +61,11 @@ public class Board {
 	
 	public boolean checkTris(String tuple){
 		if (checkWinner(PlayerType.X, tuple)){
+			logger.info("Winner is X");
 			xWinner = true;
 			return true;
 		}else if (checkWinner(PlayerType.O, tuple)){
+			logger.info("Winner is O");
 			oWinner = true;
 			return true;
 		}
@@ -69,25 +77,32 @@ public class Board {
 		String dig2Tris = "";
 
 		if(moves <= lenght*lenght){
+				logger.info("Check columns");
 				gameOver = checkCols();
-				if(!gameOver)
-					gameOver = checkRows();
 				if(!gameOver){
+					logger.info("Check rows");
+					gameOver = checkRows();
+				}
+				if(!gameOver){
+					logger.info("Check first diagonal");
 					//controllo una diagonale
 					//creandola prima con indici tutti uguali
 					for (int i=0; i <lenght; i++)
 						dig1Tris+=grid[i][i];
 					gameOver = checkTris(dig1Tris);
 				}
-				if (!gameOver){			
+				if (!gameOver){		
+					logger.info("Check second diagonal");
 					//controllo l'altra diagonale
 					for(int j=0; j < lenght; j++)
 						dig2Tris+=grid[j][lenght-j-1];
 					gameOver = checkTris(dig2Tris); 
 				}
-		  if(moves == lenght*lenght && !gameOver)
+		  if(moves == lenght*lenght && !gameOver){
+			logger.info("Stalemate");
 			gameOver = true;
 			stalemate = true;
+		  }
 		}
 	}
 

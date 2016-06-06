@@ -64,7 +64,6 @@ public class TicTacToe extends JFrame implements ActionListener {
 		if(e.getSource().equals(simulate)){
 			Simulation sim = new Simulation();
         	sim.randomPlay();
-        	log.append(sim.logs);
     		log.append("Win X: "+sim.board.xWinner + "\n");
     		log.append("Win O: "+sim.board.oWinner + "\n");
     		log.append("Stalemate: "+sim.board.stalemate + "\n");
