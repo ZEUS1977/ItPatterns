@@ -26,4 +26,11 @@ public class CodiceFisso50 extends CodiceFisso{
 	public void setSecondoSegmentoF(String secondoSegmentoF) {
 		this.secondoSegmentoF = secondoSegmentoF;
 	}
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(primoSegmentoF +  Constants.SPACE +
+				secondoSegmentoF+  Constants.SPACE);
+		return sb.toString();
+	}
 }

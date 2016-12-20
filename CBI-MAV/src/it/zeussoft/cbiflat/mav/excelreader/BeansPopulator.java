@@ -22,9 +22,14 @@ public class BeansPopulator {
 	}
 	
 	public static Vector<ExcelFixedFormat> excelBeansPopulate(String file, Vector<Vector<HSSFCell>> input){
-		Vector<Vector<HSSFCell>> dataHolder = 
-				ExcelFileReader.readExcel(file);
 		
+		Vector<Vector<HSSFCell>> dataHolder = null;
+		
+		try{
+			dataHolder = ExcelFileReader.readExcel(file);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		Vector<ExcelFixedFormat> rows = new Vector<ExcelFixedFormat>();
 		Iterator<Vector<HSSFCell>> it = dataHolder.iterator();
 		while(it.hasNext()) {

@@ -35,8 +35,12 @@ public class TracciatoClient {
 			outFilePath = args[2];
 		}
 		
-		
-		Vector<Vector<HSSFCell>> dataHolder = ExcelFileReader.readExcel(excelFilePath);
+		Vector<Vector<HSSFCell>> dataHolder = null;
+		try{
+			dataHolder = ExcelFileReader.readExcel(excelFilePath);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		ExcelFileReader.printCellDataToConsole(dataHolder);
 		
 		

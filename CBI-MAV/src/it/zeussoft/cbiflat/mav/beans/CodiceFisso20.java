@@ -41,4 +41,12 @@ public class CodiceFisso20 extends CodiceFisso{
 		this.quartoSegmentoF = quartoSegmentoF;
 	}
 		
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(primoSegmentoF +  Constants.SPACE +
+				secondoSegmentoF +  Constants.SPACE +
+				terzoSegmentoF +  Constants.SPACE +
+				quartoSegmentoF +  Constants.SPACE );
+		return sb.toString();
+	}
 }

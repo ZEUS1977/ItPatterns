@@ -34,4 +34,11 @@ public class CodiceFisso30 extends CodiceFisso {
 		this.codiceFiscaleDebitore = codiceFiscaleDebitore;
 	}
 		
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(primoSegmentoF +  Constants.SPACE +
+				secondoSegmentoF +  Constants.SPACE +
+				codiceFiscaleDebitore +  Constants.SPACE);
+		return sb.toString();
+	}
 }

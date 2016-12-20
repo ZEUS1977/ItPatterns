@@ -34,5 +34,12 @@ public class CodiceFisso70 extends CodiceFisso{
 		this.chiaviDiControllo = chiaviDiControllo;
 	}
 	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(tipoBollettino +  Constants.SPACE +
+				campoADisposizione+  Constants.SPACE +
+				chiaviDiControllo);
+		return sb.toString();
+	}
 	
 }

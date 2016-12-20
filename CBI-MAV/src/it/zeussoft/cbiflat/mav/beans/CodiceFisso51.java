@@ -26,4 +26,11 @@ public class CodiceFisso51 extends CodiceFisso{
 	public void setCodiceIdentificativoUnivoco(String codiceIdentificativoUnivoco) {
 		this.codiceIdentificativoUnivoco = codiceIdentificativoUnivoco;
 	}
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(numeroDisposizione +  Constants.SPACE +
+				codiceIdentificativoUnivoco+  Constants.SPACE);
+		return sb.toString();
+	}
 }

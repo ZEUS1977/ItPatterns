@@ -22,6 +22,8 @@ import java.util.List;
 import java.util.Vector;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.log4j.Logger;
 
 import com.blackbear.flatworm.FileCreator;
 import com.blackbear.flatworm.errors.FlatwormCreatorException;
@@ -29,7 +31,7 @@ import com.blackbear.flatworm.errors.FlatwormCreatorException;
 public class TracciatoFactory {
 	
 	public Result populateTracciato(Vector<ExcelFixedFormat> rows, ProdottoTracciato tracciato, FileCreator file){
-		
+		Logger logger = Logger.getLogger(TracciatoFactory.class);
 		//la testa dall'execel ha bisogno di info che ci sono in tutte le righe dell'excel, prendo la prima
 		ExcelFixedFormat rowZero = rows.get(0);
 		
@@ -45,6 +47,7 @@ public class TracciatoFactory {
 		List<RecordCodiceFisso> records = new ArrayList<RecordCodiceFisso>();
 		
 		for(int i = 0; i < rows.size(); i++){ 
+			
 			CodiceFisso14Factory f14 = new CodiceFisso14Factory();
 			CodiceFisso20Factory f20 = new CodiceFisso20Factory();
 			CodiceFisso30Factory f30 = new CodiceFisso30Factory();
@@ -63,23 +66,27 @@ public class TracciatoFactory {
 		
 			row = rows.get(i);
 			if(row != null && row.getScadenza() != null && row.getScadenza() != StringUtils.EMPTY) {
-
+				logger.info(row);
 				RecordCodiceFisso record = new RecordCodiceFisso(); 
 				//il progressivo parte da uno ed è presente in ogni richiesta di mav
 				progressivo = i+1;		
 				System.out.println(i + row.toString());			
 				
 				tot = f14.populateCodiceFisso(cf14, row, progressivo, tot);
+				logger.info(f14);
 				record.setCodiceFisso14(cf14);
 				
 				f20.populateCodiceFisso(cf20, row, progressivo);
+				logger.info(f20);
 				record.setCodiceFisso20(cf20);				
 				
 				f30.populateCodiceFisso(cf30, row, progressivo);
+				logger.info(f30);
 				record.setCodiceFisso30(cf30);
 				
 				try{
 					f40.populateCodiceFisso(cf40, row, progressivo);
+					logger.info(f40);
 					record.setCodiceFisso40(cf40);
 				}catch(Exception e){
 					//TODO VALUTARE SE GESTIRE DIFFERENTI TIPI DI ECCEZZIONI CUSTOM 
@@ -87,12 +94,15 @@ public class TracciatoFactory {
 				}
 				
 				f50.populateCodiceFisso(cf50, row, progressivo);
+				logger.info(f50);
 				record.setCodiceFisso50(cf50);
 				
 				f51.populateCodiceFisso(cf51, row, progressivo);
+				logger.info(f51);
 				record.setCodiceFisso51(cf51);
 				
 				f70.populateCodiceFisso(cf70, row, progressivo);
+				logger.info(f70);
 				record.setCodiceFisso70(cf70);
 				
 				records.add(record);

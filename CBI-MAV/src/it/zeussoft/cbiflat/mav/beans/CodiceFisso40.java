@@ -48,4 +48,14 @@ public class CodiceFisso40 extends CodiceFisso{
 		this.codicePaese = codicePaese;
 	}
 	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(viaCivicoFrazione +  Constants.SPACE +
+				cap+  Constants.SPACE +
+				comuneProvincia+  Constants.SPACE +
+				completamentoIndirizzo+  Constants.SPACE +
+				codicePaese+  Constants.SPACE);
+		return sb.toString();
+	}
+	
 }

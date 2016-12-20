@@ -95,4 +95,20 @@ public class CodaEF extends FattoreTracciatoMAV{
 	public void setCampoNonDisponibile(String campoNonDisponibile) {
 		this.campoNonDisponibile = campoNonDisponibile;
 	}
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(mittenteSia +  Constants.SPACE +                             
+				riceventeABI +  Constants.SPACE +
+				dataCreazione +  Constants.SPACE +
+				nomeSupporto +  Constants.SPACE +
+				campoADisposizione +  Constants.SPACE +
+				numeroDisposizioni +  Constants.SPACE +
+				totImportiNegativi +  Constants.SPACE +
+				totImportiPositiviZeri +  Constants.SPACE +
+				totRecord +  Constants.SPACE +
+				codiceDivisa +  Constants.SPACE +          
+				campoNonDisponibile +  Constants.SPACE);
+		return sb.toString();
+	}
 }

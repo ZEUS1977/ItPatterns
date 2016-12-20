@@ -1,5 +1,7 @@
 package it.zeussoft.cbiflat.mav.beans.input;
 
+import it.zeussoft.cbiflat.mav.consts.Constants;
+
 public class ExcelFixedFormat {
 	
 	private String creditore;
@@ -93,5 +95,23 @@ public class ExcelFixedFormat {
 	}
 	public void setConto(String conto) {
 		this.conto = conto;
+	}
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(creditore  +  Constants.SPACE +
+				titolo  +  Constants.SPACE +	
+				debitore  +  Constants.SPACE +
+				indirizzo_via_civico  +  Constants.SPACE +
+				indirizzo_cap  +  Constants.SPACE +
+				indirizzo_comune  +  Constants.SPACE +
+				indirizzo_provincia  +  Constants.SPACE +
+				rata  +  Constants.SPACE +	
+				scadenza  +  Constants.SPACE + 	
+				causale  +  Constants.SPACE +	
+				iban  +  Constants.SPACE +
+				codSia  +  Constants.SPACE +
+				conto  +  Constants.SPACE);
+		return sb.toString();
 	}
 }

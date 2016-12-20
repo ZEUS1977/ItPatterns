@@ -86,7 +86,13 @@ public class FileChooser extends JPanel
     
     public void readAndPopulate(String input){
     	
-		Vector<Vector<HSSFCell>> dataHolder = ExcelFileReader.readExcel(TracciatoClient.CONF_FILE);
+    	Vector<Vector<HSSFCell>> dataHolder = null;
+		try{
+			dataHolder = ExcelFileReader.readExcel(input);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		ExcelFileReader.printCellDataToConsole(dataHolder);
 		
 		
@@ -95,6 +101,7 @@ public class FileChooser extends JPanel
 		TracciatoFactory tf = new TracciatoFactory();
 		ProdottoTracciato tracciato = new ProdottoTracciato();
 		FileCreator file = null;
+		
 		file = TracciatoClient.openFile(TracciatoClient.CONF_FILE, TracciatoClient.OUT_FILE);
 		
 		Result res = tf.populateTracciato(rows, tracciato, file);

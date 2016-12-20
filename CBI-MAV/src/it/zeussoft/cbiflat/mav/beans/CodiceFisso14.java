@@ -89,4 +89,20 @@ public class CodiceFisso14 extends CodiceFisso{
 	public void setCodiceDvisa(String codiceDvisa) {
 		this.codiceDvisa = codiceDvisa;
 	}	
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(dataScadenza + Constants.SPACE +
+					causale + Constants.SPACE +
+					importo + Constants.SPACE +
+					segno + Constants.SPACE +
+					abiCreditore + Constants.SPACE +
+					cabAssuntrice + Constants.SPACE +
+					contoAccredito + Constants.SPACE +
+					codiceSia + Constants.SPACE +
+					tipo + Constants.SPACE +
+					codiceDebitore + Constants.SPACE +
+					codiceDvisa + Constants.SPACE );
+		return sb.toString();
+	}
 }
