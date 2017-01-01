@@ -1,5 +1,28 @@
 package it.zeussoft.cbiflat;
  
+import java.awt.BorderLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import com.blackbear.flatworm.FileCreator;
+
 import it.zeussoft.cbiflat.mav.TracciatoClient;
 import it.zeussoft.cbiflat.mav.beans.Result;
 import it.zeussoft.cbiflat.mav.beans.input.ExcelFixedFormat;
@@ -7,19 +30,6 @@ import it.zeussoft.cbiflat.mav.beans.product.ProdottoTracciato;
 import it.zeussoft.cbiflat.mav.excelreader.BeansPopulator;
 import it.zeussoft.cbiflat.mav.excelreader.ExcelFileReader;
 import it.zeussoft.cbiflat.mav.factory.TracciatoFactory;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.Vector;
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-
-import com.blackbear.flatworm.FileCreator;
  
 /*
  * FileChooserDemo.java uses these files:
@@ -86,7 +96,7 @@ public class FileChooser extends JPanel
     
     public void readAndPopulate(String input){
     	
-    	Vector<Vector<HSSFCell>> dataHolder = null;
+    	Map<Integer,List<Object>> dataHolder = null;
 		try{
 			dataHolder = ExcelFileReader.readExcel(input);
 		}catch (Exception e) {

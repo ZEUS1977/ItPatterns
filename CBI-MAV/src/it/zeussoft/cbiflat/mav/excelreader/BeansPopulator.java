@@ -2,40 +2,37 @@ package it.zeussoft.cbiflat.mav.excelreader;
 
 
 
-import it.zeussoft.cbiflat.mav.beans.input.ExcelFixedFormat;
-
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Vector;
 
-
-
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
+import it.zeussoft.cbiflat.mav.beans.input.ExcelFixedFormat;
 
 public class BeansPopulator {
 	
 	
 	
 	public static void main(String args){
-		Vector<Vector<HSSFCell>> dataHolder = null;
+		 Map<Integer,List<Object>> dataHolder = null;
 		excelBeansPopulate("C:\\Users\\ulisse\\workspace\\CBI-MAV\\doc\\FILE MAV AIUOLA - 12.xls", dataHolder);	
 	}
 	
-	public static Vector<ExcelFixedFormat> excelBeansPopulate(String file, Vector<Vector<HSSFCell>> input){
+	public static Vector<ExcelFixedFormat> excelBeansPopulate(String file,  Map<Integer,List<Object>> input){
 		
-		Vector<Vector<HSSFCell>> dataHolder = null;
+		Map<Integer,List<Object>> dataHolder = null;
 		
 		try{
 			dataHolder = ExcelFileReader.readExcel(file);
 		}catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		Vector<ExcelFixedFormat> rows = new Vector<ExcelFixedFormat>();
-		Iterator<Vector<HSSFCell>> it = dataHolder.iterator();
+		Iterator<List<Object>> it = dataHolder.values().iterator();
 		while(it.hasNext()) {
-			Vector<HSSFCell> cellStoreVector = (Vector<HSSFCell>) it.next();
+			List<Object> cellStoreVector = (List<Object>) it.next();
 			ExcelFixedFormat row = new ExcelFixedFormat();
-			Iterator<HSSFCell> itCell = cellStoreVector.iterator();
+			Iterator<Object> itCell = cellStoreVector.iterator();
 			if(itCell.hasNext())
 				row.setCreditore(itCell.next().toString());
 			if(itCell.hasNext())

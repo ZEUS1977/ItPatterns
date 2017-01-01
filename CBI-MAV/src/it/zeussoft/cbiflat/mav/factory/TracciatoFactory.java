@@ -152,6 +152,8 @@ public class TracciatoFactory {
 			
 		}catch (FlatwormCreatorException flatwormCreatorException) {
 			flatwormCreatorException.printStackTrace();
+			System.out.println("beanName" + beanName);
+			System.out.println("bean" + bean);
 		}catch (IOException flatwormConfigurationValueError) {
 			flatwormConfigurationValueError.printStackTrace();
 		} finally {  

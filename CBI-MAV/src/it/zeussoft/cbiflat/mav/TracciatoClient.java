@@ -1,20 +1,20 @@
 package it.zeussoft.cbiflat.mav;
 
 
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
+import com.blackbear.flatworm.FileCreator;
+import com.blackbear.flatworm.errors.FlatwormCreatorException;
+
 import it.zeussoft.cbiflat.mav.beans.input.ExcelFixedFormat;
 import it.zeussoft.cbiflat.mav.beans.product.ProdottoTracciato;
 import it.zeussoft.cbiflat.mav.consts.Constants;
 import it.zeussoft.cbiflat.mav.excelreader.BeansPopulator;
 import it.zeussoft.cbiflat.mav.excelreader.ExcelFileReader;
 import it.zeussoft.cbiflat.mav.factory.TracciatoFactory;
-
-import java.io.UnsupportedEncodingException;
-import java.util.Vector;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-
-import com.blackbear.flatworm.FileCreator;
-import com.blackbear.flatworm.errors.FlatwormCreatorException;
 
 public class TracciatoClient {
 	public static final String  CUR_DIR = System.getProperty("user.dir");
@@ -35,7 +35,7 @@ public class TracciatoClient {
 			outFilePath = args[2];
 		}
 		
-		Vector<Vector<HSSFCell>> dataHolder = null;
+		 Map<Integer,List<Object>> dataHolder = null;
 		try{
 			dataHolder = ExcelFileReader.readExcel(excelFilePath);
 		}catch (Exception e) {
